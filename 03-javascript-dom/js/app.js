@@ -58,3 +58,10 @@ window.onload = function () {
 
 // then().catch()
 // Async...await function
+
+let user = {
+  name: "John Doe",
+  sayHello: function () {
+    return this.name + " Hello!";
+  },
+};
