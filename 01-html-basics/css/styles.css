@@ -19,6 +19,15 @@ ul {
 .list-item {
   padding: 16px;
   display: inline-block;
+  transition: all 0.4s ease;
+}
+
+.list-item:hover {
+  background-color: #838181;
+}
+
+.list-item a:hover {
+  color: rgb(233, 233, 47);
 }
 
 aside {
@@ -56,4 +65,32 @@ footer p {
 #how-to > li {
   color: rgb(97, 54, 16);
   padding: 12px;
+}
+
+p + span {
+  color: tomato;
+}
+
+.google-page {
+  font-size: 24px;
+}
+
+/* LVHA */
+.google-page:link {
+  color: rgb(7, 75, 7);
+}
+.google-page:visited {
+  color: #ff45ff;
+}
+.google-page:hover {
+  color: rgb(222, 222, 48);
+  background-color: #333;
+}
+.google-page:active {
+  color: rgb(104, 25, 25);
+  background-color: #fff;
+}
+
+[name="article-1"] > blockquote::first-letter {
+  font-size: 36px;
 }
