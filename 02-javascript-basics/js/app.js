@@ -105,6 +105,47 @@ console.log(marks);
 
 // console.log(position);
 
-let joinedArray = marks.join(",");
+// let joinedArray = marks.join(",");
 
-console.log(joinedArray);
+// console.log(joinedArray);
+
+// FUNCTIONS
+// Function Declaration
+// function add(n1, n2) {
+//   return n1 + n2;
+// }
+
+// console.log("Sum : ", add(2, 4));
+
+// Function Expression
+// let sum = function (n1, n2) {
+//   return n1 + n2;
+// };
+
+// console.log("Sum : ", sum(3, 5));
+
+// Arrow Function
+// let add = (n1, n2) => n1 + n2;
+
+// console.log("Add : ", add(4, 5));
+
+// Callback - supplied as argument to demoFn
+// function greet() {
+//   console.log("Hola");
+// }
+
+// function demoFn(cb) {
+//   cb();
+// }
+
+// demoFn(greet);
+
+// HOF - Returning function from HoF function
+function mystry() {
+  return function () {
+    return 12;
+  };
+}
+
+let mysterious = mystry();
+console.log(mysterious()); // ?
