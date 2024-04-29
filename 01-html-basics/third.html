@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Demo</title>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 24px;
+        width: 600px;
+        background-color: lightgray;
+      }
+      .box-1 {
+        background-color: coral;
+        align-self: flex-start;
+      }
+      .box-2 {
+        background-color: antiquewhite;
+        align-self: flex-end;
+      }
+      .box-3 {
+        background-color: aqua;
+        height: 200px;
+      }
+      .box-4 {
+        background-color: beige;
+        order: 1;
+      }
+      .box-5 {
+        background-color: blue;
+        order: 2;
+      }
+      .box-6 {
+        background-color: rgb(212, 81, 81);
+      }
+      .box-7 {
+        background-color: tomato;
+        order: 3;
+      }
+      .box-8 {
+        background-color: goldenrod;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box box-1">HTML</div>
+      <div class="box box-2">and</div>
+      <div class="box box-3">CSS</div>
+      <div class="box box-4">are</div>
+      <div class="box box-5">awesome</div>
+      <div class="box box-6">languages</div>
+      <div class="box box-7">to</div>
+      <div class="box box-8">work</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+body {
+  color: tomato;
+  padding: 24px;
+  margin: 18px;
+  font-family: "Mukta";
+}
+
+.container {
+  font-size: 24px;
+  /* color: goldenrod; */
+  width: 400px;
+  padding: 10px;
+  border: 4px red solid;
+  margin: 20px;
+  box-sizing: border-box;
+  position: relative;
+  float: right;
+}
+
+.list-item {
+  /* padding-top: 20px;
+  padding-bottom: 22px;
+  padding-left: 20px;
+  padding-right: 24px; */
+
+  padding: 20px;
+}
+
+.btn-login {
+  padding: 20px;
+}
+
+.btn-more-info {
+  position: absolute;
+  bottom: 20px;
+  right: -20px;
+}
