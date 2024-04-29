@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 600px;
+  margin: 0 auto;
+}
+
+header {
+  margin: 16px 24px;
+}
+
+ul {
+  list-style: none;
+}
+
+.list-item {
+  padding: 16px;
+  display: inline-block;
+}
+
+aside {
+  background-color: rgb(179, 243, 179);
+  padding: 12px;
+  box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.2);
+}
+
+aside li {
+  padding: 12px;
+}
+#sidebar-heading {
+  color: #ff45ff;
+  margin-bottom: 24px;
+}
+
+.flex-items {
+  display: flex;
+}
+section article {
+  /* background-color: #b0b0b0; */
+  margin-bottom: 18px;
+}
+
+footer p {
+  font-size: 24px;
+  text-align: center;
+}
+
+[name="article-1"],
+[name="article-2"] {
+  font-size: 24px;
+}
+
+#how-to > li {
+  color: rgb(97, 54, 16);
+  padding: 12px;
+}
