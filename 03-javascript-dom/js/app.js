@@ -16,22 +16,38 @@ window.onload = function () {
     inputTitle.value = "";
   });
 
-  btnFetchTodos.addEventListener("click", function () {
-    fetch("https://jsonplaceholder.typicode.com/todos")
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (result) {
-        result.forEach(function (todo) {
-          const liElement = document.createElement("li");
-          liElement.innerHTML = todo.title;
-          listContainer.appendChild(liElement);
-        });
-      })
-      .catch(function (err) {
-        console.error(err);
+  btnFetchTodos.addEventListener("click", async function () {
+    try {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/todos"
+      );
+      const result = await response.json();
+      result.forEach(function (todo) {
+        const liElement = document.createElement("li");
+        liElement.innerHTML = todo.title;
+        listContainer.appendChild(liElement);
       });
+    } catch (err) {
+      console.error(err);
+    }
   });
+
+  //   btnFetchTodos.addEventListener("click", function () {
+  //     fetch("https://jsonplaceholder.typicode.com/todos")
+  //       .then(function (response) {
+  //         return response.json();
+  //       })
+  //       .then(function (result) {
+  //         result.forEach(function (todo) {
+  //           const liElement = document.createElement("li");
+  //           liElement.innerHTML = todo.title;
+  //           listContainer.appendChild(liElement);
+  //         });
+  //       })
+  //       .catch(function (err) {
+  //         console.error(err);
+  //       });
+  //   });
 
   //   setTimeout(() => {
   //     alert("After two seconds");
