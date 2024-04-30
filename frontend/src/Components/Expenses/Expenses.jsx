@@ -1,12 +1,27 @@
 import React, { Fragment } from "react";
+import ExpenseItem from "./ExpenseItem/ExpenseItem";
 
 function Expenses() {
-  let expense = {
-    id: "e001",
-    title: "Grocery",
-    amount: 19,
-    createdAt: new Date("Dec 20, 2023"),
-  };
+  let expenses = [
+    {
+      id: "e001",
+      title: "Grocery",
+      amount: 19,
+      createdAt: new Date("Dec 20, 2023"),
+    },
+    {
+      id: "e002",
+      title: "shopping",
+      amount: 32,
+      createdAt: new Date("Mar 2, 2024"),
+    },
+    {
+      id: "e003",
+      title: "Insurance",
+      amount: 59,
+      createdAt: new Date("Sep 15, 2022"),
+    },
+  ];
 
   return (
     <Fragment>
@@ -14,17 +29,9 @@ function Expenses() {
         <h2 className="text-center">My Expenses</h2>
 
         <div className="row">
-          <div className="col-4">
-            <div className="card">
-              <div className="card-header">
-                <h5 className="text-center">{expense.title.toUpperCase()}</h5>
-              </div>
-              <div className="card-body">
-                <p className="lead">Amount : ${expense.amount}</p>
-                <p>Date : {expense.createdAt.toISOString()}</p>
-              </div>
-            </div>
-          </div>
+          <ExpenseItem expense={expenses[0]} />
+          <ExpenseItem expense={expenses[1]} />
+          <ExpenseItem expense={expenses[2]} />
         </div>
       </div>
     </Fragment>
