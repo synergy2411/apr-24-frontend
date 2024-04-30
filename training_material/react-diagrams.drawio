@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-04-30T11:03:14.767Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="IUmpQn00MydxPsGi41-6" version="24.3.1" type="device" pages="2">
+<mxfile host="app.diagrams.net" modified="2024-04-30T11:17:41.515Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="NBg2dlT0A_Tk_0J_DBXL" version="24.3.1" type="device" pages="2">
   <diagram name="Page-1" id="qCsWM2g1122hmiwEwRHx">
     <mxGraphModel dx="601" dy="346" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -105,14 +105,23 @@
         <mxCell id="Ac-35urtZ-GtHt7a7FWF-2" value="Expenses" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="354" y="170" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="Ac-35urtZ-GtHt7a7FWF-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Ac-35urtZ-GtHt7a7FWF-4" target="Ac-35urtZ-GtHt7a7FWF-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="Ac-35urtZ-GtHt7a7FWF-4" value="ExpenseItem" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="354" y="280" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Ac-35urtZ-GtHt7a7FWF-6" value="Array of EXPENSES" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="474" y="178" width="130" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Ac-35urtZ-GtHt7a7FWF-7" value="Props" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="414" y="240" width="50" height="30" as="geometry" />
+        <mxCell id="Ac-35urtZ-GtHt7a7FWF-7" value="Props - expense" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="414" y="240" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ac-35urtZ-GtHt7a7FWF-8" value="ExpenseDate" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ac-35urtZ-GtHt7a7FWF-10" value="Props - createdAt" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="414" y="350" width="120" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

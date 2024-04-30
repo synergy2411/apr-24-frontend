@@ -1,3 +1,5 @@
+import ExpenseData from "../ExpenseData/ExpenseData";
+
 function ExpenseItem(props) {
   return (
     <div className="col-4">
@@ -7,7 +9,7 @@ function ExpenseItem(props) {
         </div>
         <div className="card-body">
           <p className="lead">Amount : ${props.expense.amount}</p>
-          <p>Date : {props.expense.createdAt.toISOString()}</p>
+          <ExpenseData createdAt={props.expense.createdAt} />
         </div>
       </div>
     </div>
