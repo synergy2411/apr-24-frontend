@@ -1,33 +1,28 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 function Expenses() {
-  let product = {
-    name: "Apple iPhone",
-    quantity: 199,
-    description: "This is awesome iPhone",
+  let expense = {
+    id: "e001",
+    title: "Grocery",
+    amount: 19,
+    createdAt: new Date("Dec 20, 2023"),
   };
 
-  let friends = ["Monica", "Joe", "Ross", "Rachel", "Chandler"];
-
   return (
-    <div>
-      <h2>Expenses coming soon...</h2>
-      <p>Name : {product.name}</p>
-      <p>Quantity : {product.quantity}</p>
-      <p>
-        {product.quantity > 0
-          ? "Product is available"
-          : "Product is unavailable"}
-      </p>
-      <p>{product.description}</p>
-      <h2>Friends</h2>
-      <hr />
-      <ul>
-        {friends.map((friend) => (
-          <li>{friend}</li>
-        ))}
-      </ul>
-    </div>
+    <Fragment>
+      <div className="container">
+        <h2 className="text-center">My Expenses</h2>
+        <div className="card">
+          <div className="card-header">
+            <h5>{expense.title.toUpperCase()}</h5>
+          </div>
+          <div className="card-body">
+            <p>Amount : {expense.amount}</p>
+            <p>Date : {expense.createdAt.toISOString()}</p>
+          </div>
+        </div>
+      </div>
+    </Fragment>
   );
 }
 

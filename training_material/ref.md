@@ -68,3 +68,7 @@
 
 - cd frontend
 - npm start
+
+# To install Bootstrap
+
+- npm install bootstrap
