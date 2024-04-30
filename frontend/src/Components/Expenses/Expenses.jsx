@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import ExpenseItem from "./ExpenseItem/ExpenseItem";
 
 function Expenses() {
@@ -23,10 +23,25 @@ function Expenses() {
     },
   ];
 
+  const [show, setShow] = useState(false);
+
+  const clickHandler = () => setShow(!show);
+
   return (
     <Fragment>
       <div className="container">
         <h2 className="text-center">My Expenses</h2>
+
+        <div className="row mb-4">
+          <div className="col-4 offset-4">
+            <div className="d-grid">
+              <button className="btn btn-primary" onClick={clickHandler}>
+                Click Me
+              </button>
+            </div>
+            {show ? <p>This paragraph will appear dynamically</p> : null}
+          </div>
+        </div>
 
         <div className="row">
           <ExpenseItem expense={expenses[0]} />
