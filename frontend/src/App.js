@@ -1,5 +1,12 @@
+import Expenses from "./Components/Expenses/Expenses";
+
 function App() {
-  return <h1> App Works!</h1>;
+  return (
+    <div>
+      <h1> App Works!</h1>
+      <Expenses />
+    </div>
+  );
 }
 
 export default App;
