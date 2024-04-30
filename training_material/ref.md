@@ -52,3 +52,19 @@
 # DOM - Document Object Model
 
 - Hierarchical represenatation of HTML Elements
+
+# To create React Project
+
+> Option 1
+
+- npx create-react-app frontend
+
+> Option 2
+
+- npm install -g create-react-app
+- create-react-app frontend
+
+# To start React App
+
+- cd frontend
+- npm start
