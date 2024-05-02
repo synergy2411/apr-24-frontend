@@ -1,13 +1,25 @@
 import { useState } from "react";
+import { v4 } from "uuid";
 
-function ExpenseForm({ onFormClose }) {
+function ExpenseForm({ onFormClose, onAddExpense }) {
   const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState(0);
+  const [enteredCreatedAt, setEnteredCreatedAt] = useState("");
 
   const titleChangeHandler = (event) => setEnteredTitle(event.target.value);
+  const amountChangeHandler = (event) => setEnteredAmount(event.target.value);
+  const createdAtChangeHandler = (event) =>
+    setEnteredCreatedAt(event.target.value);
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log("Title : ", enteredTitle);
+    let newExpense = {
+      id: v4(),
+      title: enteredTitle,
+      amount: Number(enteredAmount),
+      createdAt: new Date(enteredCreatedAt),
+    };
+    onAddExpense(newExpense);
   };
 
   return (
@@ -39,6 +51,8 @@ function ExpenseForm({ onFormClose }) {
               placeholder=""
               step="0.1"
               min="1.0"
+              onChange={amountChangeHandler}
+              value={enteredAmount}
             />
             <label htmlFor="amount">Amount</label>
           </div>
@@ -53,6 +67,8 @@ function ExpenseForm({ onFormClose }) {
               placeholder=""
               min="2021-04-01"
               max="2024-03-31"
+              onChange={createdAtChangeHandler}
+              value={enteredCreatedAt}
             />
             <label htmlFor="created-at">Date</label>
           </div>

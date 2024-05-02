@@ -82,3 +82,7 @@
 const [stateVariable, stateChangingFunction] = useState(initValue)
 
 const [show, setShow] = useState(false);
+
+# To install UUID
+
+- npm install uuid

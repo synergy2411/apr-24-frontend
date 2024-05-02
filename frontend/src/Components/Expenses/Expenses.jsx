@@ -2,33 +2,40 @@ import React, { Fragment, useState } from "react";
 import ExpenseItem from "./ExpenseItem/ExpenseItem";
 import ExpenseForm from "./ExpenseForm/ExpenseForm";
 
+let INITIAL_EXPENSES = [
+  {
+    id: "e001",
+    title: "Grocery",
+    amount: 19,
+    createdAt: new Date("Dec 20, 2023"),
+  },
+  {
+    id: "e002",
+    title: "shopping",
+    amount: 32,
+    createdAt: new Date("Mar 2, 2024"),
+  },
+  {
+    id: "e003",
+    title: "Insurance",
+    amount: 59,
+    createdAt: new Date("Sep 15, 2022"),
+  },
+];
+
 function Expenses() {
-  let expenses = [
-    {
-      id: "e001",
-      title: "Grocery",
-      amount: 19,
-      createdAt: new Date("Dec 20, 2023"),
-    },
-    {
-      id: "e002",
-      title: "shopping",
-      amount: 32,
-      createdAt: new Date("Mar 2, 2024"),
-    },
-    {
-      id: "e003",
-      title: "Insurance",
-      amount: 59,
-      createdAt: new Date("Sep 15, 2022"),
-    },
-  ];
+  const [expenses, setExpenses] = useState(INITIAL_EXPENSES);
 
   const [show, setShow] = useState(false);
 
   const clickHandler = () => setShow(!show);
 
   const onFormClose = () => setShow(false);
+
+  const onAddExpense = (newExpense) => {
+    setExpenses((prevExpenses) => [newExpense, ...prevExpenses]);
+    onFormClose();
+  };
 
   return (
     <Fragment>
@@ -44,12 +51,14 @@ function Expenses() {
             </div>
           </div>
         </div>
-        {show && <ExpenseForm onFormClose={onFormClose} />}
+        {show && (
+          <ExpenseForm onFormClose={onFormClose} onAddExpense={onAddExpense} />
+        )}
 
         <div className="row">
-          <ExpenseItem expense={expenses[0]} />
-          <ExpenseItem expense={expenses[1]} />
-          <ExpenseItem expense={expenses[2]} />
+          {expenses.map((expense) => (
+            <ExpenseItem expense={expense} key={expense.id} />
+          ))}
         </div>
       </div>
     </Fragment>
