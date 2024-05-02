@@ -1,4 +1,4 @@
-import ClassBasedComp from "./Components/Demo/ClassBasedComp";
+import ControlledComp from "./Components/Demo/ControlledComp";
 
 function App() {
   return (
@@ -6,7 +6,9 @@ function App() {
       <h1> App Works!</h1>
       {/* <Expenses /> */}
 
-      <ClassBasedComp />
+      {/* <ClassBasedComp demoProp={"The Demo Props"} /> */}
+
+      <ControlledComp />
     </div>
   );
 }

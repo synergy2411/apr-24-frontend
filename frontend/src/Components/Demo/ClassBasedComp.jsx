@@ -1,13 +1,12 @@
 import { Component } from "react";
 
 class ClassBasedComp extends Component {
-  state = {
-    counter: 0,
-    todos: [],
-  };
-
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 0,
+      todos: [],
+    };
     console.log("Constructor");
   }
 
@@ -34,7 +33,7 @@ class ClassBasedComp extends Component {
     });
   };
   render() {
-    console.log("Render");
+    console.log("Render", this.props);
     return (
       <div className="container">
         <h1>Class Based Component Loaded</h1>
