@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import ExpenseItem from "./ExpenseItem/ExpenseItem";
 import ExpenseForm from "./ExpenseForm/ExpenseForm";
+import ExpenseFilter from "./ExpenseFilter/ExpenseFilter";
 
 let INITIAL_EXPENSES = [
   {
@@ -55,6 +56,9 @@ function Expenses() {
                 {show ? "Hide" : "Show"} Form
               </button>
             </div>
+          </div>
+          <div className="col-4">
+            <ExpenseFilter />
           </div>
         </div>
         {show && (
