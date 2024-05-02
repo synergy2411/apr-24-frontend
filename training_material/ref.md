@@ -72,3 +72,13 @@
 # To install Bootstrap
 
 - npm install bootstrap
+
+# Props : way to supply data from Parent component to Child Component
+
+# State : Data to managed in component
+
+- Changing state will re-render the component with latest state value
+
+const [stateVariable, stateChangingFunction] = useState(initValue)
+
+const [show, setShow] = useState(false);

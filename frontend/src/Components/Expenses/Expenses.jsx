@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import ExpenseItem from "./ExpenseItem/ExpenseItem";
+import ExpenseForm from "./ExpenseForm/ExpenseForm";
 
 function Expenses() {
   let expenses = [
@@ -36,12 +37,12 @@ function Expenses() {
           <div className="col-4 offset-4">
             <div className="d-grid">
               <button className="btn btn-primary" onClick={clickHandler}>
-                Click Me
+                {show ? "Hide" : "Show"} Form
               </button>
             </div>
-            {show ? <p>This paragraph will appear dynamically</p> : null}
           </div>
         </div>
+        {show && <ExpenseForm />}
 
         <div className="row">
           <ExpenseItem expense={expenses[0]} />
