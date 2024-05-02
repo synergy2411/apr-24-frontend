@@ -93,3 +93,14 @@ State
 Component Communication : Props
 
 # Lifting up the state -> Sending the value from Child component to Parent component
+
+# Controlled vs Uncontrolled
+
+- Controlled
+  > updated value for every key stroke
+  > Error Message & Validations
+  > Lots of Code
+  > eg. Registration Form
+- Uncontrolled
+  > Less Code : no handler function, no state management, no useState()
+  > eg. Login Form

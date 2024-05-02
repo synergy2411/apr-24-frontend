@@ -1,10 +1,12 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 function UncontrolledComp() {
   const labelInputRef = useRef();
+  const [todos, setTodos] = useState([]);
 
   const addClickHandler = () => {
-    console.log("Label  :", labelInputRef.current.value);
+    setTodos((prevTodos) => [labelInputRef.current.value, ...prevTodos]);
+    // labelInputRef.current.value = "";
   };
 
   return (
@@ -13,20 +15,34 @@ function UncontrolledComp() {
 
       {/* Uncontrolled Component */}
 
-      <div className="form-floating mb-3">
-        <input
-          type="text"
-          className="form-control"
-          name="label"
-          id="label"
-          placeholder=""
-          ref={labelInputRef}
-        />
-        <label htmlFor="label">Add Todo</label>
+      <div className="row">
+        <div className="col-10">
+          <div className="form-floating mb-3">
+            <input
+              type="text"
+              className="form-control"
+              name="label"
+              id="label"
+              placeholder=""
+              ref={labelInputRef}
+            />
+            <label htmlFor="label">Add Todo</label>
+          </div>
+        </div>
+        <div className="col-2">
+          <div className="d-grid">
+            <button className="btn btn-primary" onClick={addClickHandler}>
+              Add
+            </button>
+          </div>
+        </div>
       </div>
-      <button className="btn btn-primary" onClick={addClickHandler}>
-        Add
-      </button>
+      <hr />
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo}>{todo}</li>
+        ))}
+      </ul>
     </div>
   );
 }
