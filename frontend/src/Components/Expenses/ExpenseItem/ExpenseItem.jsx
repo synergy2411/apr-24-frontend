@@ -1,6 +1,9 @@
 import ExpenseData from "../ExpenseData/ExpenseData";
 
 function ExpenseItem(props) {
+  const deleteClickHandler = () => {
+    props.onDeleteExpense(props.expense.id);
+  };
   return (
     <div className="col-4">
       <div className="card">
@@ -10,6 +13,14 @@ function ExpenseItem(props) {
         <div className="card-body">
           <p className="lead">Amount : ${props.expense.amount}</p>
           <ExpenseData createdAt={props.expense.createdAt} />
+          <div className="float-end">
+            <button
+              className="btn btn-outline-danger btn-sm"
+              onClick={deleteClickHandler}
+            >
+              Delete
+            </button>
+          </div>
         </div>
       </div>
     </div>

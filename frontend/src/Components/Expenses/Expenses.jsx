@@ -37,6 +37,12 @@ function Expenses() {
     onFormClose();
   };
 
+  const onDeleteExpense = (expenseId) => {
+    setExpenses((prevExpenses) =>
+      prevExpenses.filter((expense) => expense.id !== expenseId)
+    );
+  };
+
   return (
     <Fragment>
       <div className="container">
@@ -57,7 +63,11 @@ function Expenses() {
 
         <div className="row">
           {expenses.map((expense) => (
-            <ExpenseItem expense={expense} key={expense.id} />
+            <ExpenseItem
+              expense={expense}
+              key={expense.id}
+              onDeleteExpense={onDeleteExpense}
+            />
           ))}
         </div>
       </div>
