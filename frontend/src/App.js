@@ -1,4 +1,4 @@
-import ControlledComp from "./Components/Demo/ControlledComp";
+import UncontrolledComp from "./Components/Demo/Uncontrolled";
 
 function App() {
   return (
@@ -8,7 +8,9 @@ function App() {
 
       {/* <ClassBasedComp demoProp={"The Demo Props"} /> */}
 
-      <ControlledComp />
+      {/* <ControlledComp /> */}
+
+      <UncontrolledComp />
     </div>
   );
 }
