@@ -86,3 +86,10 @@ const [show, setShow] = useState(false);
 # To install UUID
 
 - npm install uuid
+
+Component
+Props
+State
+Component Communication : Props
+
+# Lifting up the state -> Sending the value from Child component to Parent component

@@ -1,10 +1,12 @@
-import Expenses from "./Components/Expenses/Expenses";
+import ClassBasedComp from "./Components/Demo/ClassBasedComp";
 
 function App() {
   return (
     <div>
       <h1> App Works!</h1>
-      <Expenses />
+      {/* <Expenses /> */}
+
+      <ClassBasedComp />
     </div>
   );
 }
