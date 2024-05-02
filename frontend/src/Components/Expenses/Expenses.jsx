@@ -29,6 +29,8 @@ function Expenses() {
 
   const [show, setShow] = useState(false);
 
+  const [selYear, setSelYear] = useState("");
+
   const clickHandler = () => setShow(!show);
 
   const onFormClose = () => setShow(false);
@@ -44,6 +46,17 @@ function Expenses() {
     );
   };
 
+  const onSelectedYear = (selectedYear) => {
+    setSelYear(selectedYear);
+  };
+
+  let filteredExpenses = expenses;
+  if (selYear.trim() !== "") {
+    filteredExpenses = expenses.filter(
+      (expense) => expense.createdAt.getFullYear().toString() === selYear
+    );
+  }
+
   return (
     <Fragment>
       <div className="container">
@@ -58,7 +71,7 @@ function Expenses() {
             </div>
           </div>
           <div className="col-4">
-            <ExpenseFilter />
+            <ExpenseFilter onSelectedYear={onSelectedYear} />
           </div>
         </div>
         {show && (
@@ -66,7 +79,7 @@ function Expenses() {
         )}
 
         <div className="row">
-          {expenses.map((expense) => (
+          {filteredExpenses.map((expense) => (
             <ExpenseItem
               expense={expense}
               key={expense.id}
