@@ -1,9 +1,20 @@
-function ExpenseForm() {
+import { useState } from "react";
+
+function ExpenseForm({ onFormClose }) {
+  const [enteredTitle, setEnteredTitle] = useState("");
+
+  const titleChangeHandler = (event) => setEnteredTitle(event.target.value);
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    console.log("Title : ", enteredTitle);
+  };
+
   return (
     <div className="backdrop">
       <div className="my-modal">
         <h1 className="my-background text-center">Add New Expense</h1>
-        <form>
+        <form onSubmit={submitHandler}>
           {/* Title */}
           <div className="form-floating mb-3">
             <input
@@ -12,6 +23,8 @@ function ExpenseForm() {
               name="title"
               id="title"
               placeholder=""
+              onChange={titleChangeHandler}
+              value={enteredTitle}
             />
             <label htmlFor="title">Title</label>
           </div>
@@ -48,12 +61,20 @@ function ExpenseForm() {
           <div className="row">
             <div className="col-6">
               <div className="d-grid">
-                <button className="btn btn-primary">Add</button>
+                <button className="btn btn-primary" type="submit">
+                  Add
+                </button>
               </div>
             </div>
             <div className="col-6">
               <div className="d-grid">
-                <button className="btn btn-secondary">Close</button>
+                <button
+                  className="btn btn-secondary"
+                  type="button"
+                  onClick={onFormClose}
+                >
+                  Close
+                </button>
               </div>
             </div>
           </div>

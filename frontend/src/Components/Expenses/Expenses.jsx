@@ -28,6 +28,8 @@ function Expenses() {
 
   const clickHandler = () => setShow(!show);
 
+  const onFormClose = () => setShow(false);
+
   return (
     <Fragment>
       <div className="container">
@@ -42,7 +44,7 @@ function Expenses() {
             </div>
           </div>
         </div>
-        {show && <ExpenseForm />}
+        {show && <ExpenseForm onFormClose={onFormClose} />}
 
         <div className="row">
           <ExpenseItem expense={expenses[0]} />
