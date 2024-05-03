@@ -1,8 +1,8 @@
-import UseReducerDemo from "./Components/Demo/UseReducerDemo";
+import ParentComp from "./Components/Demo/OptimizedComp/ParentComp";
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <h1> App Works!</h1>
       {/* <Expenses /> */}
 
@@ -16,7 +16,9 @@ function App() {
 
       {/* <CompA /> */}
 
-      <UseReducerDemo />
+      {/* <UseReducerDemo /> */}
+
+      <ParentComp />
     </div>
   );
 }

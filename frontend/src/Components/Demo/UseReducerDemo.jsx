@@ -74,8 +74,8 @@ function UseReducerDemo() {
       </button>
 
       <ul>
-        {state.result.map((r) => (
-          <li key={r}>{r}</li>
+        {state.result.map((r, i) => (
+          <li key={i}>{r}</li>
         ))}
       </ul>
     </div>
