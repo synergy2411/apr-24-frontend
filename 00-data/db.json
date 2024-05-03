@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": "t001",
+      "title": "shopping",
+      "status": "completed"
+    },
+    {
+      "id": "t003",
+      "title": "Planting",
+      "status": "completed"
+    },
+    {
+      "id": "t004",
+      "title": "insurance",
+      "status": "completed"
+    },
+    {
+      "title": "T-shirt",
+      "status": "pending",
+      "id": "sBvctBV"
+    }
+  ]
+}

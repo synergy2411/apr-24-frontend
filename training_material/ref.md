@@ -195,3 +195,41 @@ useCallback() ->
 - Return memoized value which is returned by the inline/callback function
 
 useMemo(() => () => {}) === useCallback(() => {})
+
+# To install JSON Server
+
+- npm install json-server@0.17.4 -g
+- json-server --version
+- json-server --watch --port=3030 db.json
+
+DOCTORS
+POST /doctors
+GET /doctors
+GET /doctors/doctorId
+
+COURSES
+
+GET - /courses - all courses available
+GET - /courses/coursesId - Single Course details
+POST - /courses - add new Course
+PATCH - /courses - update the exsiting course
+DELETE - /delete/courseId - delete the single course
+
+# Single Page Applications
+
+- Rendering the components conditionally
+- Does not reload / refresh in browser
+- Better User Experience / Interaction
+- Decrease Network bandwidth
+- Fast
+- Complete page information is sent to client in one go
+
+http://www.example.com -> index.html, css, javaScript
+
+- Hashbang mode : http://www.example.com/#/products
+- HTML5Mode (default): regular : http://www.example.com/products
+
+---
+
+> npx create-react-app frontend
+> npm create vite@latest
