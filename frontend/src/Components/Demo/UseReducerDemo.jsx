@@ -4,26 +4,35 @@ function reducerFn(state, action) {
   if (action.type === "INCREMENT") {
     // return state.counter++;     // NEVER EVER CHANGE EXISTING STATE
     return {
+      ...state,
       counter: state.counter + 1,
     };
   } else if (action.type === "DECREMENT") {
     return {
+      ...state,
       counter: state.counter - 1,
     };
   } else if (action.type === "ADD_COUNTER") {
     return {
+      ...state,
       counter: state.counter + action.payload,
     };
   } else if (action.type === "SUBTRACT_COUNTER") {
     return {
+      ...state,
       counter: state.counter - action.payload,
+    };
+  } else if (action.type === "STORE_RESULT") {
+    return {
+      ...state,
+      result: [state.counter, ...state.result],
     };
   }
   return state;
 }
 
 function UseReducerDemo() {
-  const [state, dispatch] = useReducer(reducerFn, { counter: 0 });
+  const [state, dispatch] = useReducer(reducerFn, { counter: 0, result: [] });
 
   return (
     <div className="container">
@@ -54,6 +63,21 @@ function UseReducerDemo() {
       >
         Subtract - 5
       </button>
+
+      <br />
+
+      <button
+        className="btn btn-danger"
+        onClick={() => dispatch({ type: "STORE_RESULT" })}
+      >
+        Store Result
+      </button>
+
+      <ul>
+        {state.result.map((r) => (
+          <li key={r}>{r}</li>
+        ))}
+      </ul>
     </div>
   );
 }
