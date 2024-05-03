@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import ChildComp from "./ChildComp";
 
 function ParentComp() {
   const [toggle, setToggle] = useState(false);
 
   console.log("Parent renders");
+
+  const loggerFn = useCallback(() => console.log("Logger works!"), []); // xixix0001 -> xixix1099
 
   return (
     <>
@@ -14,7 +16,7 @@ function ParentComp() {
         Toggle
       </button>
 
-      <ChildComp toggle={true} />
+      <ChildComp toggle={true} loggerFn={loggerFn} />
     </>
   );
 }
