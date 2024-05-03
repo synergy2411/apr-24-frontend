@@ -165,3 +165,18 @@ https://api.github.com/users/mojombo/repos
 - Solves the problem of Prop-drilling
 
 - CompA -> CompB -> CompC
+
+# State Management
+
+- useState() : Manage the state for one component
+- useReducer() : Manage Complex state for a component
+- Context API : Manage the state for component branch
+  > Not highly optimized
+  > Complex to manage
+  > user preferences eg. favorate color, theme
+  > JWT Token
+- Redux : Manage the state for the complete application
+  > Performant
+  > complex state logic
+  > Async task / side effects
+  > frequent change in data

@@ -1,5 +1,4 @@
-import CompA from "./Components/Demo/ContextDemo/CompA";
-import UseEffectDemo from "./Components/Demo/UseEffect";
+import UseReducerDemo from "./Components/Demo/UseReducerDemo";
 
 function App() {
   return (
@@ -15,7 +14,9 @@ function App() {
 
       {/* <UseEffectDemo /> */}
 
-      <CompA />
+      {/* <CompA /> */}
+
+      <UseReducerDemo />
     </div>
   );
 }
