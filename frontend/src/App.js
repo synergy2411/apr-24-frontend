@@ -1,3 +1,4 @@
+import CompA from "./Components/Demo/ContextDemo/CompA";
 import UseEffectDemo from "./Components/Demo/UseEffect";
 
 function App() {
@@ -12,7 +13,9 @@ function App() {
 
       {/* <UncontrolledComp /> */}
 
-      <UseEffectDemo />
+      {/* <UseEffectDemo /> */}
+
+      <CompA />
     </div>
   );
 }

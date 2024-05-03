@@ -144,15 +144,24 @@ Component Communication : Props
 - useEffect(cb)
   > cb executes for initial rendering of component
   > cb executes for all the subsequent rendering of the component
-- useEffect(cb, [])
+- useEffect(cb, []) - componentDidMount
   > cb executes for initial rendering of component
   > cb will executes only ONCE
-- useEffect(cb, [Dependencies])
+- useEffect(cb, [Dependencies]) - componentDidUpdate
   > cb executes for initial rendering of component
   > cb executes whenever the dependency will change
-- useEffect(cb => cleanUpFn, [Dependencies])
+- useEffect(cb => cleanUpFn, [Dependencies]) - componentWillUnmount
   > cb executes for initial rendering of component
   > dependency will change
   > cleanUpFn will execute
   > cb executes after the cleanUpFn
   > CleanUpFn will also executes when component is about to unload
+
+Typeahead Suggestion / Autocomplete suggestion
+https://api.github.com/users/mojombo/repos
+
+# Context API
+
+- Solves the problem of Prop-drilling
+
+- CompA -> CompB -> CompC
