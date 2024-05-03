@@ -233,3 +233,7 @@ http://www.example.com -> index.html, css, javaScript
 
 > npx create-react-app frontend
 > npm create vite@latest
+
+# to install react-router-dom
+
+- npm install react-router-dom
