@@ -180,3 +180,18 @@ https://api.github.com/users/mojombo/repos
   > complex state logic
   > Async task / side effects
   > frequent change in data
+
+# JavaScript DataTypes
+
+- Primitive : String, Number, Boolean, BigInt, Symbol
+- Reference : Object, Array, Functions, Date
+
+useCallback() ->
+
+- Functions Reference Type
+- Returns memozied value for inline functions
+  useMemo() ->
+- works with all reference types
+- Return memoized value which is returned by the inline/callback function
+
+useMemo(() => () => {}) === useCallback(() => {})

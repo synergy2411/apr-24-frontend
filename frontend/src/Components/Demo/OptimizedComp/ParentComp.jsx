@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import ChildComp from "./ChildComp";
 
 function ParentComp() {
@@ -6,7 +6,11 @@ function ParentComp() {
 
   console.log("Parent renders");
 
-  const loggerFn = useCallback(() => console.log("Logger works!"), []); // xixix0001 -> xixix1099
+  //   const loggerFn = useCallback(() => console.log("Logger works!"), []); // xixix0001 -> xixix1099
+
+  const loggerFn = useMemo(() => () => console.log("Logger Again"), []);
+
+  const friends = useMemo(() => ["Monica", "Joey", "Ross", "Chandler"], []);
 
   return (
     <>
@@ -16,7 +20,7 @@ function ParentComp() {
         Toggle
       </button>
 
-      <ChildComp toggle={true} loggerFn={loggerFn} />
+      <ChildComp toggle={true} loggerFn={loggerFn} friends={friends} />
     </>
   );
 }
