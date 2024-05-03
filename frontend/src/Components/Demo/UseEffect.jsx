@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 function UseEffectDemo() {
   const [counter, setCounter] = useState(0);
   const [toggle, setToggle] = useState(false);
+  const [repos, setRepos] = useState([]);
+
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     console.log("Effect Works");
@@ -10,6 +13,26 @@ function UseEffectDemo() {
       console.log("Clean Up");
     };
   }, [counter]);
+
+  useEffect(() => {
+    let notifier = setTimeout(async () => {
+      try {
+        if (searchTerm !== "") {
+          const response = await fetch(
+            `https://api.github.com/users/${searchTerm}/repos`
+          );
+          const result = await response.json();
+          setRepos(result);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }, 2000);
+
+    return () => {
+      clearTimeout(notifier);
+    };
+  }, [searchTerm]);
 
   return (
     <div className="container">
@@ -26,6 +49,19 @@ function UseEffectDemo() {
       </button>
 
       {toggle && <p>Toggled Paragraph</p>}
+
+      <hr />
+
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={(event) => setSearchTerm(event.target.value)}
+      />
+      <ul>
+        {repos.map((repo) => (
+          <li key={repo.id}>{repo.name}</li>
+        ))}
+      </ul>
     </div>
   );
 }
