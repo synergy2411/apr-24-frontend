@@ -104,3 +104,55 @@ Component Communication : Props
 - Uncontrolled
   > Less Code : no handler function, no state management, no useState()
   > eg. Login Form
+
+# Class based component - to manage the state & to perform side effects
+
+- Component Life-cycle Methods
+- Mounting : Constructor, Render, ComponentDidMount
+- Updating : shouldComponentUpdate, Render, ComponentDidUpdate
+- Unmounting : componentWillUnmount
+- Render Phase : no side-effect operation
+- Commit Phase : can run side-effect
+
+# Controlled & Uncontrolled Elements
+
+- Controlled - State is managed by React Component; useState() + ChangeHandler Function
+- Uncontrolled - State is managed by DOM itself; useRef()
+
+# Lifting up the State : using functional props
+
+- useRef() : used to receive the reference of DOM element
+
+---
+
+# Common Hooks
+
+- useState()
+- useRef()
+- useEffect()
+- useContext()
+- useReducer()
+- useCallback()
+- useMemo()
+
+# Create Single Page Apps
+
+# State Management using Redux
+
+# useEffect() flavours -
+
+- useEffect(cb)
+  > cb executes for initial rendering of component
+  > cb executes for all the subsequent rendering of the component
+- useEffect(cb, [])
+  > cb executes for initial rendering of component
+  > cb will executes only ONCE
+- useEffect(cb, [Dependencies])
+  > cb executes for initial rendering of component
+  > cb executes whenever the dependency will change
+- useEffect(cb => cleanUpFn, [Dependencies])
+  > cb executes for initial rendering of component
+  > dependency will change
+  > cleanUpFn will execute
+  > cb executes after the cleanUpFn
+  > CleanUpFn will also executes when component is about to unload

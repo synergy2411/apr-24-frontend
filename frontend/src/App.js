@@ -1,4 +1,4 @@
-import UncontrolledComp from "./Components/Demo/Uncontrolled";
+import UseEffectDemo from "./Components/Demo/UseEffect";
 
 function App() {
   return (
@@ -10,7 +10,9 @@ function App() {
 
       {/* <ControlledComp /> */}
 
-      <UncontrolledComp />
+      {/* <UncontrolledComp /> */}
+
+      <UseEffectDemo />
     </div>
   );
 }
