@@ -1,0 +1,8 @@
+.clickable {
+  transition: 0.5s all ease;
+}
+
+.clickable:hover {
+  background-color: rgb(238, 159, 145);
+  cursor: pointer;
+}
