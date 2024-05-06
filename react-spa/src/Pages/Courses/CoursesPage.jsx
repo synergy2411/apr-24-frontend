@@ -1,6 +1,7 @@
-import { json, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import AddCourseButton from "../../Components/Courses/AddCourseButton/AddCourseButton";
 import Courses from "../../Components/Courses/Courses";
+import axiosBaseURL from "../../common/http-axios";
 
 function CoursesPage() {
   const courses = useLoaderData();
@@ -17,11 +18,17 @@ function CoursesPage() {
 export default CoursesPage;
 
 export async function CoursesPageLoader() {
-  const response = await fetch("http://localhost:3030/courses");
+  const response = await axiosBaseURL.get("/courses");
 
-  if (!response.ok) {
-    throw json({ message: "Unable to find courses" }, { status: 404 });
-  }
-
-  return response;
+  return response.data;
 }
+
+// export async function CoursesPageLoader() {
+//   const response = await fetch("http://localhost:3030/courses");
+
+//   if (!response.ok) {
+//     throw json({ message: "Unable to find courses" }, { status: 404 });
+//   }
+
+//   return response;
+// }

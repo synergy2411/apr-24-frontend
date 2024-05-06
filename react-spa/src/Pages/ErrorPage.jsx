@@ -3,8 +3,6 @@ import { Link, useRouteError } from "react-router-dom";
 function ErrorPage() {
   const error = useRouteError();
 
-  console.log("ERROR : ", error);
-
   let errorMessage = "Oops! Something went wrong.";
   let status = "400";
 
