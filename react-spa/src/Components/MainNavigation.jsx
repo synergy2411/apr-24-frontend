@@ -4,16 +4,22 @@ function MainNavigation() {
   return (
     <header>
       <nav>
-        <ul>
-          <li>
-            <NavLink to="/">Home</NavLink>
+        <ul className="nav nav-tabs">
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/">
+              Home
+            </NavLink>
           </li>
-          <li>
-            <NavLink to="/products">Products</NavLink>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/products">
+              Products
+            </NavLink>
           </li>
 
-          <li>
-            <NavLink to="/courses">Courses</NavLink>
+          <li className="nav-item">
+            <NavLink className="nav-link" to="/courses">
+              Courses
+            </NavLink>
           </li>
         </ul>
       </nav>
