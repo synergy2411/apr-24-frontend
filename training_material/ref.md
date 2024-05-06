@@ -236,6 +236,8 @@ http://www.example.com -> index.html, css, javaScript
 - <Outlet /> : provides the space to load the child page
 - <RouterProvider /> : injects the routing configuration in React app
 - loaders : ensures the data in the routes before it gets loaded in the UI
+- Route Parameter : Dynamic segment of the URL
+- useNavigate() : used for programmatic navigation
 
 # COURSES : http://localhost:3030/courses
 
@@ -244,3 +246,10 @@ GET - /courses/coursesId - Single Course details
 POST - /courses - add new Course
 PATCH - /courses - update the existing course
 DELETE - /delete/courseId - delete the single course
+
+http://localhost:5173/courses > list of available courses
+
+http://localhost:5173/courses/:courseId > details of selected course
+
+http://localhost:5173/courses/new > Add New Course
+http://localhost:5173/courses/:courseId/edit > edit the existing course

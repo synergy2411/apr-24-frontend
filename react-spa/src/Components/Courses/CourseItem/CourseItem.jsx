@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 function CourseItem({ course }) {
+  const navigate = useNavigate();
   return (
     <div className="col-4">
-      <div className="card">
+      <div className="card" onClick={() => navigate(`/courses/${course.id}`)}>
         <div className="card-header">
           <h5 className="text-center">{course.title}</h5>
         </div>
