@@ -1,14 +1,12 @@
+import CourseItem from "./CourseItem/CourseItem";
+
 /* eslint-disable react/prop-types */
 function Courses({ courses }) {
   return (
     <div className="row">
-      <div className="col-4">
-        <div className="card">
-          <div className="card-img">
-            <img src={courses[0].logo} alt="" />
-          </div>
-        </div>
-      </div>
+      {courses.map((course) => (
+        <CourseItem key={course.id} course={course} />
+      ))}
     </div>
   );
 }
