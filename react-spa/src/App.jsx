@@ -4,7 +4,9 @@ import ProductsPage from "./Pages/ProductsPage";
 import RootLayout from "./Pages/RootLayout";
 import ErrorPage from "./Pages/ErrorPage";
 import CoursesPage, { CoursesPageLoader } from "./Pages/Courses/CoursesPage";
-import CourseDetailPage from "./Pages/Courses/CourseDetail";
+import CourseDetailPage, {
+  CourseDetailLoader,
+} from "./Pages/Courses/CourseDetailPage";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,7 @@ const router = createBrowserRouter([
       {
         path: "/courses/:courseId",
         element: <CourseDetailPage />,
+        loader: CourseDetailLoader,
       },
     ],
   },
