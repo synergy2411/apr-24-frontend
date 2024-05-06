@@ -2,7 +2,7 @@
   "courses": [
     {
       "id": "c001",
-      "title": "React 101",
+      "title": "React for Advanced Developers",
       "duration": 60,
       "logo": "https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-svg-vector.svg"
     },
@@ -17,6 +17,12 @@
       "title": "Progressive Vue",
       "duration": 80,
       "logo": "https://w7.pngwing.com/pngs/854/555/png-transparent-vue-js-hd-logo-thumbnail.png"
+    },
+    {
+      "title": "Awesome NodeJS",
+      "duration": "80",
+      "logo": "https://picsum.photos/200",
+      "id": "A8ufsST"
     }
   ],
   "todos": [

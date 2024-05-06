@@ -3,15 +3,16 @@ import CourseDetailPage, {
   CourseDetailLoader,
   DeleteCourseAction,
 } from "./Pages/Courses/CourseDetailPage";
+import CourseEditPage, {
+  CourseEditAction,
+  CourseEditPageLoader,
+} from "./Pages/Courses/CourseEditPage";
 import CoursesPage, { CoursesPageLoader } from "./Pages/Courses/CoursesPage";
 import NewCoursePage, { NewCourseAction } from "./Pages/Courses/NewCoursePage";
 import ErrorPage from "./Pages/ErrorPage";
 import HomePage from "./Pages/HomePage";
 import ProductsPage from "./Pages/ProductsPage";
 import RootLayout from "./Pages/RootLayout";
-import CourseEditPage, {
-  CourseEditPageLoader,
-} from "./Pages/Courses/CourseEditPage";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,7 @@ const router = createBrowserRouter([
         path: "/courses/:courseId/edit",
         element: <CourseEditPage />,
         loader: CourseEditPageLoader,
+        action: CourseEditAction,
       },
     ],
   },

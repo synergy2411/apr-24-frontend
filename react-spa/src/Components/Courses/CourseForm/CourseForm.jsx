@@ -1,18 +1,29 @@
 /* eslint-disable react/prop-types */
-import { Form, Link } from "react-router-dom";
+import { Link, Form, useSubmit } from "react-router-dom";
 
 function CourseForm({ course }) {
   let headingMessage = "Add New Course";
+
+  const submit = useSubmit();
 
   if (course) {
     headingMessage = "Edit Course";
   }
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+    let options = { action: "/courses/new", method: "POST" };
+    if (course) {
+      options = { action: `/courses/${course.id}/edit`, method: "PATCH" };
+    }
+    submit(event.currentTarget, options);
+  };
   return (
     <div className="row">
       <div className="col-8 offset-2">
         <h1 className="text-center">{headingMessage}</h1>
-        <Form method="POST" action="/courses/new">
+        {/* <Form method="POST" action="/courses/new"> */}
+        <Form onSubmit={submitHandler}>
           {/* title */}
           <div className="form-floating mb-3">
             <input
@@ -57,7 +68,10 @@ function CourseForm({ course }) {
           <div className="row">
             <div className="col-6">
               <div className="d-grid">
-                <button type="submit" className="btn btn-success">
+                <button
+                  type="submit"
+                  className={`btn btn-${course ? "success" : "primary"}`}
+                >
                   {course ? "Edit" : "Add"}
                 </button>
               </div>
@@ -70,6 +84,7 @@ function CourseForm({ course }) {
               </div>
             </div>
           </div>
+          {/* </Form> */}
         </Form>
       </div>
     </div>

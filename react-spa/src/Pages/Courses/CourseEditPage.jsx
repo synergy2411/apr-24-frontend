@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, redirect } from "react-router-dom";
 import CourseForm from "../../Components/Courses/CourseForm/CourseForm";
 
 function CourseEditPage() {
@@ -18,4 +18,27 @@ export async function CourseEditPageLoader({ params }) {
   }
 
   return response;
+}
+
+export async function CourseEditAction({ params, request }) {
+  const { courseId } = params;
+  const formData = await request.formData();
+  let updatedCourse = {
+    title: formData.get("title"),
+    duration: formData.get("duration"),
+    logo: formData.get("logo"),
+  };
+
+  const response = await fetch(`http://localhost:3030/courses/${courseId}`, {
+    method: request.method,
+    body: JSON.stringify(updatedCourse),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error("Unable to update course");
+  }
+  return redirect("/courses");
 }
