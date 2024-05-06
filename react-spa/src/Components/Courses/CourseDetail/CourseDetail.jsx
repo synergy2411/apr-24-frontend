@@ -1,8 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useSubmit } from "react-router-dom";
 import classes from "./CourseDetail.module.css";
 
 /* eslint-disable react/prop-types */
 function CourseDetail({ course }) {
+  const submit = useSubmit();
+
+  const deleteClickHandler = () => {
+    if (!confirm(`Are you sure to delete this item - ${course.title}?`)) {
+      return;
+    }
+    submit({}, { action: `/courses/${course.id}`, method: "DELETE" });
+  };
+
   return (
     <div className={classes["backdrop"]}>
       <div className={classes["my-modal"]}>
@@ -26,7 +35,12 @@ function CourseDetail({ course }) {
               </div>
               <div className="col-6">
                 <div className="d-grid">
-                  <button className="btn btn-outline-danger">Delete</button>
+                  <button
+                    className="btn btn-outline-danger"
+                    onClick={deleteClickHandler}
+                  >
+                    Delete
+                  </button>
                 </div>
               </div>
             </div>

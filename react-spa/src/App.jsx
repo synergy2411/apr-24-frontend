@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CourseDetailPage, {
   CourseDetailLoader,
+  DeleteCourseAction,
 } from "./Pages/Courses/CourseDetailPage";
 import CoursesPage, { CoursesPageLoader } from "./Pages/Courses/CoursesPage";
 import NewCoursePage, { NewCourseAction } from "./Pages/Courses/NewCoursePage";
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
         path: "/courses/:courseId",
         element: <CourseDetailPage />,
         loader: CourseDetailLoader,
+        action: DeleteCourseAction,
       },
       {
         path: "/courses/new",

@@ -5,7 +5,7 @@ import classes from "./CourseItem.module.css";
 function CourseItem({ course }) {
   const navigate = useNavigate();
   return (
-    <div className="col-4">
+    <div className="col-4 mb-4">
       <div
         className={`card ${classes["clickable"]}`}
         onClick={() => navigate(`/courses/${course.id}`)}

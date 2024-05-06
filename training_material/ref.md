@@ -240,6 +240,7 @@ http://www.example.com -> index.html, css, javaScript
 
 - Route Parameter : Dynamic segment of the URL
 - useNavigate() : used for programmatic navigation
+- useSubmit() : programmatically submit the form to the actions
 
 # COURSES : http://localhost:3030/courses
 
