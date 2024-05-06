@@ -30,7 +30,12 @@ function CourseDetail({ course }) {
             <div className="row">
               <div className="col-6">
                 <div className="d-grid">
-                  <button className="btn btn-success">Edit</button>
+                  <Link
+                    to={`/courses/${course.id}/edit`}
+                    className="btn btn-success"
+                  >
+                    Edit
+                  </Link>
                 </div>
               </div>
               <div className="col-6">

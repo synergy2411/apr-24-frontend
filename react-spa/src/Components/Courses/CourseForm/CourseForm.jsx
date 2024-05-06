@@ -1,16 +1,17 @@
-import { useState } from "react";
-import { Link, Form } from "react-router-dom";
+/* eslint-disable react/prop-types */
+import { Form, Link } from "react-router-dom";
 
-function CourseForm() {
-  const [enteredTitle, setEnteredTitle] = useState("");
-  const [titleIsBlurred, setTitleIsBlurred] = useState(false);
+function CourseForm({ course }) {
+  let headingMessage = "Add New Course";
 
-  const titleIsInvalid = titleIsBlurred && enteredTitle.length < 6;
+  if (course) {
+    headingMessage = "Edit Course";
+  }
 
   return (
     <div className="row">
       <div className="col-8 offset-2">
-        <h1 className="text-center">Add New Course</h1>
+        <h1 className="text-center">{headingMessage}</h1>
         <Form method="POST" action="/courses/new">
           {/* title */}
           <div className="form-floating mb-3">
@@ -20,19 +21,9 @@ function CourseForm() {
               name="title"
               id="title"
               placeholder=""
-              value={enteredTitle}
-              onChange={(event) => {
-                setEnteredTitle(event.target.value);
-                setTitleIsBlurred(false);
-              }}
-              onBlur={() => setTitleIsBlurred(true)}
+              defaultValue={course ? course.title : ""}
             />
             <label htmlFor="title">Course Title</label>
-            {titleIsInvalid && (
-              <p className="alert alert-danger">
-                Title shoudl have at least six characters
-              </p>
-            )}
           </div>
 
           {/* duration */}
@@ -43,6 +34,7 @@ function CourseForm() {
               name="duration"
               id="duration"
               placeholder=""
+              defaultValue={course ? course.duration : ""}
             />
             <label htmlFor="duration">Course Duration</label>
           </div>
@@ -55,6 +47,7 @@ function CourseForm() {
               name="logo"
               id="logo"
               placeholder=""
+              defaultValue={course ? course.logo : ""}
             />
             <label htmlFor="logo">Course Logo</label>
           </div>
@@ -64,12 +57,8 @@ function CourseForm() {
           <div className="row">
             <div className="col-6">
               <div className="d-grid">
-                <button
-                  type="submit"
-                  className="btn btn-success"
-                  disabled={titleIsInvalid}
-                >
-                  Add
+                <button type="submit" className="btn btn-success">
+                  {course ? "Edit" : "Add"}
                 </button>
               </div>
             </div>

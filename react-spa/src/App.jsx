@@ -9,6 +9,9 @@ import ErrorPage from "./Pages/ErrorPage";
 import HomePage from "./Pages/HomePage";
 import ProductsPage from "./Pages/ProductsPage";
 import RootLayout from "./Pages/RootLayout";
+import CourseEditPage, {
+  CourseEditPageLoader,
+} from "./Pages/Courses/CourseEditPage";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +42,11 @@ const router = createBrowserRouter([
         path: "/courses/new",
         element: <NewCoursePage />,
         action: NewCourseAction,
+      },
+      {
+        path: "/courses/:courseId/edit",
+        element: <CourseEditPage />,
+        loader: CourseEditPageLoader,
       },
     ],
   },
