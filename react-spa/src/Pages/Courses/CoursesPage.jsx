@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { json, useLoaderData } from "react-router-dom";
 import AddCourseButton from "../../Components/Courses/AddCourseButton/AddCourseButton";
 import Courses from "../../Components/Courses/Courses";
 
@@ -20,7 +20,7 @@ export async function CoursesPageLoader() {
   const response = await fetch("http://localhost:3030/courses");
 
   if (!response.ok) {
-    throw new Error("Unable to find courses");
+    throw json({ message: "Unable to find courses" }, { status: 404 });
   }
 
   return response;

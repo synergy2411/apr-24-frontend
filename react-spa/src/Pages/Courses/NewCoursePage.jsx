@@ -1,4 +1,4 @@
-import { redirect } from "react-router-dom";
+import { redirect, json } from "react-router-dom";
 import CourseForm from "../../Components/Courses/CourseForm/CourseForm";
 
 function NewCoursePage() {
@@ -24,7 +24,7 @@ export async function NewCourseAction({ request }) {
   });
 
   if (!response.ok) {
-    throw new Error("Unable to create new course");
+    throw json({ message: "Unable to create new course" }, { status: 404 });
   }
 
   return redirect("/courses");
