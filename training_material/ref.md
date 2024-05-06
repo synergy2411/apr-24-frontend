@@ -237,3 +237,9 @@ http://www.example.com -> index.html, css, javaScript
 # to install react-router-dom
 
 - npm install react-router-dom
+- npm run dev
+
+# Routing Terminologies
+
+- <Outlet /> : provides the space to load the child page
+- <RouterProvider /> : injects the routing configuration in React app

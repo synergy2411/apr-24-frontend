@@ -1,4 +1,24 @@
 {
+  "courses": [
+    {
+      "id": "c001",
+      "title": "React 101",
+      "duration": 60,
+      "logo": "https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-svg-vector.svg"
+    },
+    {
+      "id": "c002",
+      "title": "Mastering Angular",
+      "duration": 120,
+      "logo": "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/21_Angular_logo_logos-512.png"
+    },
+    {
+      "id": "c003",
+      "title": "Progressive Vue",
+      "duration": 80,
+      "logo": "https://w7.pngwing.com/pngs/854/555/png-transparent-vue-js-hd-logo-thumbnail.png"
+    }
+  ],
   "todos": [
     {
       "id": "t001",
