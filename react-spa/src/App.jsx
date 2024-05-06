@@ -1,13 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "./Pages/HomePage";
-import ProductsPage from "./Pages/ProductsPage";
-import RootLayout from "./Pages/RootLayout";
-import ErrorPage from "./Pages/ErrorPage";
-import CoursesPage, { CoursesPageLoader } from "./Pages/Courses/CoursesPage";
 import CourseDetailPage, {
   CourseDetailLoader,
 } from "./Pages/Courses/CourseDetailPage";
-import NewCoursePage from "./Pages/Courses/NewCoursePage";
+import CoursesPage, { CoursesPageLoader } from "./Pages/Courses/CoursesPage";
+import NewCoursePage, { NewCourseAction } from "./Pages/Courses/NewCoursePage";
+import ErrorPage from "./Pages/ErrorPage";
+import HomePage from "./Pages/HomePage";
+import ProductsPage from "./Pages/ProductsPage";
+import RootLayout from "./Pages/RootLayout";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       {
         path: "/courses/new",
         element: <NewCoursePage />,
-        action: () => {},
+        action: NewCourseAction,
       },
     ],
   },

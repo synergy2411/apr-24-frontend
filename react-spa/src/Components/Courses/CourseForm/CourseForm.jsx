@@ -1,13 +1,9 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Form } from "react-router-dom";
 
 function CourseForm() {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [titleIsBlurred, setTitleIsBlurred] = useState(false);
-
-  const titleBlurHandler = () => {
-    setTitleIsBlurred(true);
-  };
 
   const titleIsInvalid = titleIsBlurred && enteredTitle.length < 6;
 
@@ -15,7 +11,7 @@ function CourseForm() {
     <div className="row">
       <div className="col-8 offset-2">
         <h1 className="text-center">Add New Course</h1>
-        <form>
+        <Form method="POST" action="/courses/new">
           {/* title */}
           <div className="form-floating mb-3">
             <input
@@ -29,7 +25,7 @@ function CourseForm() {
                 setEnteredTitle(event.target.value);
                 setTitleIsBlurred(false);
               }}
-              onBlur={titleBlurHandler}
+              onBlur={() => setTitleIsBlurred(true)}
             />
             <label htmlFor="title">Course Title</label>
             {titleIsInvalid && (
@@ -68,7 +64,11 @@ function CourseForm() {
           <div className="row">
             <div className="col-6">
               <div className="d-grid">
-                <button className="btn btn-success" disabled={titleIsInvalid}>
+                <button
+                  type="submit"
+                  className="btn btn-success"
+                  disabled={titleIsInvalid}
+                >
                   Add
                 </button>
               </div>
@@ -81,7 +81,7 @@ function CourseForm() {
               </div>
             </div>
           </div>
-        </form>
+        </Form>
       </div>
     </div>
   );

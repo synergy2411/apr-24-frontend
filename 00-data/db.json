@@ -17,6 +17,18 @@
       "title": "Progressive Vue",
       "duration": 80,
       "logo": "https://w7.pngwing.com/pngs/854/555/png-transparent-vue-js-hd-logo-thumbnail.png"
+    },
+    {
+      "title": "Awesome NodeJS",
+      "duration": "100",
+      "logo": "https://picsum.photos/500",
+      "id": "vkwRm5l"
+    },
+    {
+      "title": "Beginning GraphQL ",
+      "duration": "180",
+      "logo": "https://picsum.photos/500",
+      "id": "xVS1trZ"
     }
   ],
   "todos": [
