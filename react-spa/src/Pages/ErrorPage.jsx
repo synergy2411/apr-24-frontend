@@ -6,9 +6,11 @@ function ErrorPage() {
   let errorMessage = "Oops! Something went wrong.";
   let status = "400";
 
+  console.log(error);
+
   if (error) {
-    errorMessage = error.data.message;
-    status = error.status;
+    // errorMessage = error.data.message;
+    // status = error.status;
   }
   return (
     <div className="text-center mb-4">

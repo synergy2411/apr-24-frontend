@@ -1,9 +1,11 @@
-import { Link, useSubmit } from "react-router-dom";
+import { Link, useNavigation, useSubmit } from "react-router-dom";
 import classes from "./CourseDetail.module.css";
 
 /* eslint-disable react/prop-types */
 function CourseDetail({ course }) {
   const submit = useSubmit();
+
+  const navigation = useNavigation();
 
   const deleteClickHandler = () => {
     if (!confirm(`Are you sure to delete this item - ${course.title}?`)) {
@@ -11,6 +13,10 @@ function CourseDetail({ course }) {
     }
     submit({}, { action: `/courses/${course.id}`, method: "DELETE" });
   };
+
+  if (navigation.state === "loading") {
+    return <h1>Loading....</h1>;
+  }
 
   return (
     <div className={classes["backdrop"]}>

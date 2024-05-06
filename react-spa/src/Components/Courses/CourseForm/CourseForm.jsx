@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
-import { Link, Form, useSubmit } from "react-router-dom";
+import { Link, Form, useSubmit, useNavigation } from "react-router-dom";
 
 function CourseForm({ course }) {
+  const navigation = useNavigation();
+
   let headingMessage = "Add New Course";
 
   const submit = useSubmit();
@@ -69,6 +71,7 @@ function CourseForm({ course }) {
             <div className="col-6">
               <div className="d-grid">
                 <button
+                  disabled={navigation.state === "submitting"}
                   type="submit"
                   className={`btn btn-${course ? "success" : "primary"}`}
                 >

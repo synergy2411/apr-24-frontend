@@ -241,6 +241,8 @@ http://www.example.com -> index.html, css, javaScript
 - Route Parameter : Dynamic segment of the URL
 - useNavigate() : used for programmatic navigation
 - useSubmit() : programmatically submit the form to the actions
+- useRouteError() : populates the error object if any error occured in routes
+- useNavigation() : navigation state : idle, submitting, navigating
 
 # COURSES : http://localhost:3030/courses
 

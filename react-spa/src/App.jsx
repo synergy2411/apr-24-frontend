@@ -1,3 +1,5 @@
+import { lazy, Suspense } from "react";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CourseDetailPage, {
   CourseDetailLoader,
@@ -11,8 +13,10 @@ import CoursesPage, { CoursesPageLoader } from "./Pages/Courses/CoursesPage";
 import NewCoursePage, { NewCourseAction } from "./Pages/Courses/NewCoursePage";
 import ErrorPage from "./Pages/ErrorPage";
 import HomePage from "./Pages/HomePage";
-import ProductsPage from "./Pages/ProductsPage";
+// import ProductsPage from "./Pages/ProductsPage";
 import RootLayout from "./Pages/RootLayout";
+
+const LazyProducts = lazy(() => import("./Pages/ProductsPage"));
 
 const router = createBrowserRouter([
   {
@@ -26,7 +30,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/products", // http://localhost:5173/products
-        element: <ProductsPage />,
+        element: (
+          <Suspense fallback={<h1>Please wait...</h1>}>
+            <LazyProducts />
+          </Suspense>
+        ),
       },
       {
         path: "/courses",
