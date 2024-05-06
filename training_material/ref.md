@@ -207,14 +207,6 @@ POST /doctors
 GET /doctors
 GET /doctors/doctorId
 
-COURSES
-
-GET - /courses - all courses available
-GET - /courses/coursesId - Single Course details
-POST - /courses - add new Course
-PATCH - /courses - update the exsiting course
-DELETE - /delete/courseId - delete the single course
-
 # Single Page Applications
 
 - Rendering the components conditionally
@@ -243,3 +235,12 @@ http://www.example.com -> index.html, css, javaScript
 
 - <Outlet /> : provides the space to load the child page
 - <RouterProvider /> : injects the routing configuration in React app
+- loaders : ensures the data in the routes before it gets loaded in the UI
+
+# COURSES : http://localhost:3030/courses
+
+GET - /courses - all courses available
+GET - /courses/coursesId - Single Course details
+POST - /courses - add new Course
+PATCH - /courses - update the existing course
+DELETE - /delete/courseId - delete the single course
