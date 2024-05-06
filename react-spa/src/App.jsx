@@ -36,6 +36,7 @@ const router = createBrowserRouter([
       {
         path: "/courses/new",
         element: <NewCoursePage />,
+        action: () => {},
       },
     ],
   },

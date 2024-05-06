@@ -236,6 +236,8 @@ http://www.example.com -> index.html, css, javaScript
 - <Outlet /> : provides the space to load the child page
 - <RouterProvider /> : injects the routing configuration in React app
 - loaders : ensures the data in the routes before it gets loaded in the UI
+- actions : submits the form to the route; Use of <Form> Component from react-router-dom
+
 - Route Parameter : Dynamic segment of the URL
 - useNavigate() : used for programmatic navigation
 

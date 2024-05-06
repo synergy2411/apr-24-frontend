@@ -1,6 +1,16 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function CourseForm() {
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [titleIsBlurred, setTitleIsBlurred] = useState(false);
+
+  const titleBlurHandler = () => {
+    setTitleIsBlurred(true);
+  };
+
+  const titleIsInvalid = titleIsBlurred && enteredTitle.length < 6;
+
   return (
     <div className="row">
       <div className="col-8 offset-2">
@@ -14,8 +24,19 @@ function CourseForm() {
               name="title"
               id="title"
               placeholder=""
+              value={enteredTitle}
+              onChange={(event) => {
+                setEnteredTitle(event.target.value);
+                setTitleIsBlurred(false);
+              }}
+              onBlur={titleBlurHandler}
             />
             <label htmlFor="title">Course Title</label>
+            {titleIsInvalid && (
+              <p className="alert alert-danger">
+                Title shoudl have at least six characters
+              </p>
+            )}
           </div>
 
           {/* duration */}
@@ -47,7 +68,9 @@ function CourseForm() {
           <div className="row">
             <div className="col-6">
               <div className="d-grid">
-                <button className="btn btn-success">Add</button>
+                <button className="btn btn-success" disabled={titleIsInvalid}>
+                  Add
+                </button>
               </div>
             </div>
             <div className="col-6">
