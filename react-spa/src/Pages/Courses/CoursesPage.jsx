@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import AddCourseButton from "../../Components/Courses/AddCourseButton/AddCourseButton";
 import Courses from "../../Components/Courses/Courses";
 
 function CoursesPage() {
@@ -6,7 +7,8 @@ function CoursesPage() {
 
   return (
     <>
-      <h1 className="text-center">Available Courses</h1>
+      <h1 className="text-center mb-2">Available Courses</h1>
+      <AddCourseButton />
       <Courses courses={courses} />
     </>
   );

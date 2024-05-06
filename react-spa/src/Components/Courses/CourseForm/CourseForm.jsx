@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function CourseForm() {
   return (
     <div className="row">
@@ -50,7 +52,9 @@ function CourseForm() {
             </div>
             <div className="col-6">
               <div className="d-grid">
-                <button className="btn btn-outline-dark">Close</button>
+                <Link to="/courses" className="btn btn-outline-dark">
+                  Close
+                </Link>
               </div>
             </div>
           </div>
