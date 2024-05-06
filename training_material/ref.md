@@ -252,4 +252,5 @@ http://localhost:5173/courses > list of available courses
 http://localhost:5173/courses/:courseId > details of selected course
 
 http://localhost:5173/courses/new > Add New Course
+
 http://localhost:5173/courses/:courseId/edit > edit the existing course
