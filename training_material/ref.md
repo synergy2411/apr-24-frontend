@@ -242,7 +242,7 @@ http://www.example.com -> index.html, css, javaScript
 - useNavigate() : used for programmatic navigation
 - useSubmit() : programmatically submit the form to the actions
 - useRouteError() : populates the error object if any error occured in routes
-- useNavigation() : navigation state : idle, submitting, navigating
+- useNavigation() : navigation state : idle, submitting, loading
 
 # COURSES : http://localhost:3030/courses
 
@@ -259,3 +259,33 @@ http://localhost:5173/courses/:courseId > details of selected course
 http://localhost:5173/courses/new > Add New Course
 
 http://localhost:5173/courses/:courseId/edit > edit the existing course
+
+# Axios : library for making remote server calls (XHR Calls)
+
+---
+
+- Redux
+- Testing
+
+# Single Source of Truth
+
+let store = {
+counter : 0,
+result : [],
+todos : [],
+expenses : [],
+token : "",
+getCounter : () => this.counter,
+dispatch : (action) => {}
+}
+
+let user1 = {
+name : "John Doe"
+}
+
+user.age = 32 // Mutable Change
+
+let user2 = {
+...user1,
+age : 32
+}
