@@ -294,3 +294,9 @@ age : 32
 
 > npm init -y
 > npm install @reduxjs/toolkit
+
+# Create React Project
+
+- npx create-react-app react-redux-app
+- npm install @reduxjs/toolkit react-redux
+- npm install bootstrap
