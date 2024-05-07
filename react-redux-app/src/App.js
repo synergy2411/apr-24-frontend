@@ -1,7 +1,9 @@
+import TodoCockpit from "./Components/Todos/TodoCockpit";
+
 function App() {
   return (
     <>
-      <h1>App Works</h1>
+      <TodoCockpit />
     </>
   );
 }

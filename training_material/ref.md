@@ -300,3 +300,7 @@ age : 32
 - npx create-react-app react-redux-app
 - npm install @reduxjs/toolkit react-redux
 - npm install bootstrap
+
+# React Redux Library
+
+- useSelector() : to select the state from the Redux Store
