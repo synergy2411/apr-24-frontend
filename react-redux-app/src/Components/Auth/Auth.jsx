@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { PacmanLoader } from "react-spinners";
+import { MoonLoader } from "react-spinners";
 
 import { userLogin, userRegistration } from "../../store/slices/auth-slice";
 
@@ -32,7 +32,7 @@ function Auth() {
     <div className="row">
       <div className="col-8 offset-2">
         <h3 className="text-center">User Registration Form</h3>
-        {loading && <PacmanLoader size={50} color="#ff45ff" />}
+        {loading && <MoonLoader size={50} color="#ff45ff" />}
         {error && <h3 className="text-center">{error.message}</h3>}
         {!loading && (
           <form>

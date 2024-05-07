@@ -318,3 +318,7 @@ apiKey: "AIzaSyDbE_YD2e_Ie9MvqfwLfvcu0ml6JWxVz4U",
 authDomain: "sk-hexa-app.firebaseapp.com",
 
 # Enabling email/password Authentication
+
+# Install React Spinners
+
+- npm install react-spinners

@@ -1,13 +1,14 @@
 import { useSelector } from "react-redux";
 import Auth from "./Components/Auth/Auth";
-import TodoCockpit from "./Components/Todos/TodoCockpit";
+import Courses from "./Components/Courses/Courses";
 function App() {
   const { token } = useSelector((store) => store.auth);
 
   return (
     <>
       {!token && <Auth />}
-      {token && <TodoCockpit />}
+      {/* {token && <TodoCockpit />}̦ */}
+      {token && <Courses />}
     </>
   );
 }

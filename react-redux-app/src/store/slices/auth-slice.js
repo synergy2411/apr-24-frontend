@@ -43,6 +43,7 @@ export const userLogin = createAsyncThunk(
       const userCred = await signInWithEmailAndPassword(auth, email, password);
       const token = await userCred.user.getIdToken();
       console.log(token);
+      localStorage.setItem("token", token);
       return token;
     } catch (err) {
       return rejectWithValue(err);
