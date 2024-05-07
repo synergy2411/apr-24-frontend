@@ -305,3 +305,16 @@ age : 32
 
 - useSelector() : to select the state from the Redux Store
 - useDispatch() : to dispatch the action from the component
+
+---
+
+# Install Firebase SDK
+
+- npm install firebase
+
+# Firebase Credentials
+
+apiKey: "AIzaSyDbE_YD2e_Ie9MvqfwLfvcu0ml6JWxVz4U",
+authDomain: "sk-hexa-app.firebaseapp.com",
+
+# Enabling email/password Authentication
