@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { userSignOut } from "../../store/slices/auth-slice";
 
 function Courses() {
   const [courses, setCourses] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -28,6 +31,12 @@ function Courses() {
   return (
     <>
       <h1>List of Courses</h1>
+      <button
+        className="btn btn-outline-danger"
+        onClick={() => dispatch(userSignOut())}
+      >
+        Logout
+      </button>
       <ul>
         {courses.map((course) => (
           <li key={course.id}>{course.title}</li>
