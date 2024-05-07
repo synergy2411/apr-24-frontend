@@ -304,3 +304,4 @@ age : 32
 # React Redux Library
 
 - useSelector() : to select the state from the Redux Store
+- useDispatch() : to dispatch the action from the component

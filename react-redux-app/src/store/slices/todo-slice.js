@@ -15,7 +15,7 @@ const todoSlice = createSlice({
   reducers: {
     addTodo: (state, action) => {
       // Chnage the State Mutably - immer.js library in RTK
-      state.todos.push(action.payload);
+      state.todoCollection.push(action.payload);
     },
   },
 });

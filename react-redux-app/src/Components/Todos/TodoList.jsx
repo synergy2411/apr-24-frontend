@@ -1,14 +1,14 @@
 import { useSelector } from "react-redux";
+import TodoItem from "./TodoItem";
 
 function TodoList() {
   const { todoCollection } = useSelector((store) => store.todos);
 
   return (
     <>
-      <h2>My Todo List</h2>
-      <ul>
+      <ul className="list-group">
         {todoCollection.map((todo) => (
-          <li key={todo.id}>{todo.label.toUpperCase()}</li>
+          <TodoItem todo={todo} key={todo.id} />
         ))}
       </ul>
     </>
