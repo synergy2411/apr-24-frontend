@@ -31,8 +31,7 @@ export const userRegistration = createAsyncThunk(
       const token = await userCredentials.user.getIdToken();
       return token;
     } catch (err) {
-      console.log("ERROR : ", err);
-      return rejectWithValue("Unable to create new User");
+      return rejectWithValue(err);
     }
   }
 );
@@ -46,8 +45,7 @@ export const userLogin = createAsyncThunk(
       console.log(token);
       return token;
     } catch (err) {
-      console.log(err);
-      return rejectWithValue("Unable to login-in");
+      return rejectWithValue(err);
     }
   }
 );
