@@ -1,9 +1,9 @@
-import TodoCockpit from "./Components/Todos/TodoCockpit";
+import Auth from "./Components/Auth/Auth";
 
 function App() {
   return (
     <>
-      <TodoCockpit />
+      <Auth />
     </>
   );
 }

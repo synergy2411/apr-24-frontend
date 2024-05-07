@@ -1,4 +1,4 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 
@@ -8,6 +8,12 @@ const app = initializeApp({
 });
 
 const auth = getAuth(app);
+
+const initialState = {
+  token: null,
+  loading: false,
+  error: null,
+};
 
 export const userRegistration = createAsyncThunk(
   "auth/registration",
@@ -19,6 +25,7 @@ export const userRegistration = createAsyncThunk(
         password
       );
       const token = await userCredentials.user.getIdToken();
+      console.log(token);
       return token;
     } catch (err) {
       console.log("ERROR : ", err);
@@ -26,3 +33,23 @@ export const userRegistration = createAsyncThunk(
     }
   }
 );
+
+const authSlice = createSlice({
+  name: "auth",
+  initialState,
+  extraReducers: (builder) => {
+    builder.addCase(userRegistration.pending, (state, action) => {
+      state.loading = true;
+    });
+    builder.addCase(userRegistration.fulfilled, (state, action) => {
+      state.token = action.payload;
+      state.loading = false;
+    });
+    builder.addCase(userRegistration.rejected, (state, action) => {
+      state.error = action.payload;
+      state.loading = false;
+    });
+  },
+});
+
+export const authReducer = authSlice.reducer;
