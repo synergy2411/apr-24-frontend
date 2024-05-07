@@ -17,9 +17,15 @@ const todoSlice = createSlice({
       // Chnage the State Mutably - immer.js library in RTK
       state.todoCollection.push(action.payload);
     },
+    deleteTodo: (state, action) => {
+      const position = state.todoCollection.findIndex(
+        (todo) => todo.id === action.payload
+      );
+      state.todoCollection.splice(position, 1);
+    },
   },
 });
 
 export const todoReducer = todoSlice.reducer;
 
-export const { addTodo } = todoSlice.actions;
+export const { addTodo, deleteTodo } = todoSlice.actions;
