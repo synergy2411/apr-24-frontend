@@ -289,3 +289,8 @@ let user2 = {
 ...user1,
 age : 32
 }
+
+# Genrate package.json file
+
+> npm init -y
+> npm install @reduxjs/toolkit

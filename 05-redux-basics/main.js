@@ -1,4 +1,5 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { todoReducer, fetchTodos } from "./todos.js";
 
 const counterSlice = createSlice({
   name: "counter",
@@ -21,17 +22,25 @@ const { increment, decrement } = counterSlice.actions;
 const store = configureStore({
   reducer: {
     ctr: counterReducer,
+    todo: todoReducer,
   },
 });
 
-console.log("STATE : ", store.getState());
+// console.log("STATE : ", store.getState());
+
+store.subscribe(() => {
+  console.log(store.getState());
+});
 
 store.dispatch(increment());
 store.dispatch(increment());
 store.dispatch(increment());
 
-console.log("[INCREMENT] STATE: ", store.getState());
+// console.log("[INCREMENT] STATE: ", store.getState());
 
 store.dispatch(decrement());
 
-console.log("[DECREMENT] STATE: ", store.getState());
+// console.log("[DECREMENT] STATE: ", store.getState());
+
+store.dispatch(fetchTodos());
+// console.log("[TODOS] STATE: ", store.getState());
