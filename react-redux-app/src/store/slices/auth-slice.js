@@ -1,5 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { initializeApp } from "firebase/app";
 
 const app = initializeApp({
@@ -25,7 +29,6 @@ export const userRegistration = createAsyncThunk(
         password
       );
       const token = await userCredentials.user.getIdToken();
-      console.log(token);
       return token;
     } catch (err) {
       console.log("ERROR : ", err);
@@ -34,10 +37,26 @@ export const userRegistration = createAsyncThunk(
   }
 );
 
+export const userLogin = createAsyncThunk(
+  "auth/login",
+  async ({ email, password }, { rejectWithValue }) => {
+    try {
+      const userCred = await signInWithEmailAndPassword(auth, email, password);
+      const token = await userCred.user.getIdToken();
+      console.log(token);
+      return token;
+    } catch (err) {
+      console.log(err);
+      return rejectWithValue("Unable to login-in");
+    }
+  }
+);
+
 const authSlice = createSlice({
   name: "auth",
   initialState,
   extraReducers: (builder) => {
+    //   USER REGISTRATION
     builder.addCase(userRegistration.pending, (state, action) => {
       state.loading = true;
     });
@@ -46,6 +65,18 @@ const authSlice = createSlice({
       state.loading = false;
     });
     builder.addCase(userRegistration.rejected, (state, action) => {
+      state.error = action.payload;
+      state.loading = false;
+    });
+    // USER LOGIN
+    builder.addCase(userLogin.pending, (state, action) => {
+      state.loading = true;
+    });
+    builder.addCase(userLogin.fulfilled, (state, action) => {
+      state.token = action.payload;
+      state.loading = false;
+    });
+    builder.addCase(userLogin.rejected, (state, action) => {
       state.error = action.payload;
       state.loading = false;
     });

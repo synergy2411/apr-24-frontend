@@ -1,11 +1,12 @@
 import { useRef } from "react";
-import { useDispatch } from "react-redux";
-import { userRegistration } from "../../store/slices/auth-slice";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogin, userRegistration } from "../../store/slices/auth-slice";
 
 function Auth() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const dispatch = useDispatch();
+  const { loading } = useSelector((store) => store.auth);
 
   const registerClickHandler = (event) => {
     event.preventDefault();
@@ -14,6 +15,15 @@ function Auth() {
       password: passwordRef.current.value,
     };
     dispatch(userRegistration(newUser));
+  };
+
+  const loginClickHandler = (event) => {
+    event.preventDefault();
+    let user = {
+      email: emailRef.current.value,
+      password: passwordRef.current.value,
+    };
+    dispatch(userLogin(user));
   };
 
   return (
@@ -54,8 +64,16 @@ function Auth() {
                 <button
                   onClick={registerClickHandler}
                   className="btn btn-primary"
+                  disabled={loading}
                 >
                   Register
+                </button>
+              </div>
+            </div>
+            <div className="col-6">
+              <div className="d-grid">
+                <button onClick={loginClickHandler} className="btn btn-success">
+                  Login
                 </button>
               </div>
             </div>
