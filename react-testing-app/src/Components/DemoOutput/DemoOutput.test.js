@@ -42,4 +42,18 @@ describe("DemoOutput Component", () => {
 
     expect(paragraphEl).not.toBeNull();
   });
+
+  test("renders NOT 'Toggle is False' when the button is clicked", async () => {
+    render(<DemoOutput />);
+
+    const buttonEl = screen.getByRole("button");
+
+    userEvent.click(buttonEl);
+
+    const paragraphEl = await screen.findByText("toggle is false", {
+      exact: false,
+    });
+
+    expect(paragraphEl).not.toBeInTheDocument();
+  });
 });
