@@ -346,3 +346,7 @@ age : 32
 # Cloud Concepts
 
 # Docker Concepts
+
+# Generate Code Coverage
+
+- npm run test -- --coverage --watchAll=false
