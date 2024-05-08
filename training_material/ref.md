@@ -314,11 +314,35 @@ age : 32
 
 # Firebase Credentials
 
-apiKey: "AIzaSyDbE_YD2e_Ie9MvqfwLfvcu0ml6JWxVz4U",
-authDomain: "sk-hexa-app.firebaseapp.com",
-
 # Enabling email/password Authentication
 
 # Install React Spinners
 
 - npm install react-spinners
+
+---
+
+# Redux - Predictable State Management Container
+
+- Should we use Redux?
+- Runs everywhere (Client, Server, Native)
+- Live code editing and time travelling debugger (Redux DevTools)
+- Libraries : react-redux, @reduxjs/toolkit
+- Building Blocks: Action, Reducer, Store, Middleware
+- createSlice(), createAsyncThunk()
+- useSelector(), useDispatch()
+
+---
+
+# React Component Testing
+
+- TDD : Test Driven Development
+
+  > Write the Tests, make them Fail, write the Code, make them Pass
+  > AAA : Arrange > Act > Assert
+
+- BDD : Behaviour Driven Development
+
+# Cloud Concepts
+
+# Docker Concepts
