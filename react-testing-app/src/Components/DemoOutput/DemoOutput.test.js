@@ -1,4 +1,6 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+
 import DemoOutput from "./DemoOutput";
 
 describe("DemoOutput Component", () => {
@@ -16,6 +18,27 @@ describe("DemoOutput Component", () => {
 
     // const paragraphEl = screen.queryByText("toggle is false", { exact: false });
     const paragraphEl = screen.queryByText(/toggle is false/i);
+
+    expect(paragraphEl).not.toBeNull();
+  });
+
+  test("renders button with 'Toggle' text", () => {
+    render(<DemoOutput />);
+
+    const buttonEl = screen.queryByRole("button");
+
+    expect(buttonEl).toBeInTheDocument();
+  });
+
+  test("renders 'Toggle is True' when button is clicked", async () => {
+    render(<DemoOutput />);
+    const buttonEl = screen.queryByRole("button");
+
+    userEvent.click(buttonEl);
+
+    const paragraphEl = await screen.findByText("toggle is true", {
+      exact: false,
+    });
 
     expect(paragraphEl).not.toBeNull();
   });
