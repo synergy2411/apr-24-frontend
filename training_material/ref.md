@@ -343,6 +343,14 @@ age : 32
 
 - BDD : Behaviour Driven Development
 
+# Queries in React Testing Library
+
+- getAllBy
+- queryAllBy
+- findBy : async await
+
+- npm test -- --coverage --watchAll=false
+
 # Cloud Concepts
 
 # Docker Concepts
@@ -352,3 +360,73 @@ age : 32
 # Generate Code Coverage
 
 - npm run test -- --coverage --watchAll=false
+
+---
+
+# AWS Concepts
+
+- IAM : Identity & Access Manager
+  > Users, Group, Role, Permissions
+- EC2 : Elastic Cloud Compute
+  > Virtual Server
+- S3 : Simple Storage Service
+  > to store unlimited data
+- Elastic Load Balancers
+  > to distribute load among Virtual Servers
+- Route 53
+  > DNS Registration and Management
+- Elastic BeanStalk
+  > App Deployment with various Platform
+- Database Service
+  > RDS : Relational Databases eg. MySQL, SQL Server, PostgreSQL, mariaDB, Aurora
+  > DynamoDB : NoSQL Database
+
+---
+
+# CI/CD : DevOps
+
+- CI: Continuous Integration
+- CD: Continuous Deployment
+
+# Docker
+
+---
+
+# CICD Steps using AWS CodeBuild, CodePipeline & Github
+
+1. Create React App [COMPLETED]
+2. Create new Github Repo [COMPLETED]
+3. Push App to Github [COMPLETED]
+4. Create S3 Bucket
+   4.1 - Allow Static Website Hosting [COMPLETED]
+   4.2 - Allow Permissions on Bucket (added bucket policy) [COMPLETED]
+5. Create CodeBuild
+   5.1 - Access React App from Github [COMPLETED]
+   5.2 - Build the React Project [COMPLETED]
+   5.3 - Stores build artifacts in S3 bucket [COMPLETED]
+   5.4 - Deploy the App [COMPLETED]
+6. Create PipeLine
+   6.1 - Access the React App from Github [COMPLETED]
+   6.2 - Use CodeBuild to access latest changes [COMPLETED]
+
+---
+
+# Docker Command
+
+- Docker CLI
+- Docker Deamon/Server
+- Docker Hub
+- Image
+- Container
+- Commands
+  > docker run <image-name>
+  > docker create <image-name>
+  > docker start -a <container-id>
+  > docker ps : running containers
+  > docker ps --all : all containers (running / exited)
+  > docker exec -it <container-id> <command>
+  > docker stop <container-id>
+  > docker kill <container-id>
+  > docker system prune : deletes all the containers from local machine
+  > docker build -t <docker-id>/<image-name>:version .
+  > docker run -p 8080:8080 <image-name>

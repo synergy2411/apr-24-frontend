@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-07T16:46:43.071Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="lHrb5qMscGd_L8Xtv3qF" version="24.3.1" type="device" pages="3">
+<mxfile host="app.diagrams.net" modified="2024-05-09T05:57:04.860Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="GHKY4PiAx25B_bsTVsyH" version="24.3.1" type="device" pages="4">
   <diagram name="Page-1" id="qCsWM2g1122hmiwEwRHx">
     <mxGraphModel dx="842" dy="484" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -196,6 +196,50 @@
         </mxCell>
         <mxCell id="xksn1wPDsAYUYmmrSIIw-23" value="Thunk / Saga" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="355" y="568" width="90" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="esfnZIf9je2W7v9kbFtB" name="Page-4">
+    <mxGraphModel dx="862" dy="403" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="xu-WPKKKbTpRkSd4tMug-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=16;" edge="1" parent="1" source="xu-WPKKKbTpRkSd4tMug-1" target="xu-WPKKKbTpRkSd4tMug-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xu-WPKKKbTpRkSd4tMug-1" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="50" y="130" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xu-WPKKKbTpRkSd4tMug-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=16;" edge="1" parent="1" source="xu-WPKKKbTpRkSd4tMug-2" target="xu-WPKKKbTpRkSd4tMug-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xu-WPKKKbTpRkSd4tMug-2" value="SVM&lt;div style=&quot;font-size: 16px;&quot;&gt;(Source Control Version)&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;font-size: 16px;&quot;&gt;Github, GitLab&lt;/div&gt;" style="whiteSpace=wrap;html=1;verticalAlign=top;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="210" y="120" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xu-WPKKKbTpRkSd4tMug-4" value="CodeCommit" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="80" y="168" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="xu-WPKKKbTpRkSd4tMug-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=16;" edge="1" parent="1" source="xu-WPKKKbTpRkSd4tMug-5" target="xu-WPKKKbTpRkSd4tMug-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xu-WPKKKbTpRkSd4tMug-5" value="Test" style="whiteSpace=wrap;html=1;verticalAlign=top;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="410" y="120" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xu-WPKKKbTpRkSd4tMug-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="xu-WPKKKbTpRkSd4tMug-7" target="xu-WPKKKbTpRkSd4tMug-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="xu-WPKKKbTpRkSd4tMug-7" value="Build" style="whiteSpace=wrap;html=1;verticalAlign=top;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="610" y="120" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xu-WPKKKbTpRkSd4tMug-9" value="Continuous Integration CI / CD Continuous Deployment" style="text;strokeColor=none;fillColor=none;html=1;fontSize=24;fontStyle=1;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="364" y="50" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="xu-WPKKKbTpRkSd4tMug-10" value="Deployment" style="whiteSpace=wrap;html=1;verticalAlign=top;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="610" y="280" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="xu-WPKKKbTpRkSd4tMug-12" value="AWS Cloud : CodeBuild, CodePipeline, S3 Bucket" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="240" y="290" width="290" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
