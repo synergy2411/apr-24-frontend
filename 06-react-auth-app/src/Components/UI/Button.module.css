@@ -1,0 +1,18 @@
+.button_style {
+  border: none;
+  border-radius: 10px;
+  padding: 16px 32px;
+  background-color: #d9480f;
+  color: #fff4e6;
+  transition: all 0.3s ease;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.button_style:hover {
+  background-color: #e8590c;
+}
+
+.button_style:disabled {
+  opacity: 0.5;
+}
